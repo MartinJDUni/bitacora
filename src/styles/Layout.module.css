@@ -1,0 +1,5 @@
+.conteiner{
+    background: linear-gradient(to bottom,#007bff, white);
+    min-height: 100vh;
+    min-width: 100vw;
+}

@@ -1,13 +1,14 @@
 import style from "@/styles/Layout.module.css"
+import Header from "../Components/header"
 
-export default function ({children}) {
+export default function Layout({ children }) {
     return (
         <div className={style.conteiner}>
-
-            <main className={style.main}>
+            <Header></Header>
+            <main>
                 {children}
             </main>
-            
+
         </div>
     )
 }

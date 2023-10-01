@@ -1,0 +1,72 @@
+/* Header.module.css */
+.header {
+    background-color: #fff;
+    color: #000;
+    border-top: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .logo img {
+    max-height: 50px;
+
+    background-color: #fff;
+  }
+  
+  .button {
+    margin-right: 10px;
+  }
+  
+  .headerButton {
+    background-color: #fff;
+    color: #f00;
+    padding: 10px 20px;
+    border: 2px solid #f00;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .nav {
+    border-top: 2px solid rgb(239, 239, 239);
+    text-align: center;
+    width: 100%;
+  }
+  
+  .navList {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .nav li {
+    margin: 0;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #0070f3;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .nav a:hover {
+    text-decoration: underline;
+  }
+  
