@@ -1,9 +1,6 @@
-.conteiner,
-.main {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-.main {
-    background: linear-gradient(to bottom, #ffcc00, #ff6600);
+.conteiner{
+    background: linear-gradient(to bottom, #ffcc00, #ff6600); /* Colores del degradado */
+    min-height: 100vh; /* Establece la altura mínima como el 100% de la altura de la ventana */
+    display: flex;
+    flex-direction: column;
 }
