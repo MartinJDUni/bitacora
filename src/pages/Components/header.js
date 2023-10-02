@@ -19,17 +19,17 @@ export default function Header() {
         <ul className={styles.navList}>
           <li>
             <Link href="/" legacyBehavior>
-              <a className={styles.navLink}>Page 1</a>
+              <a className={styles.navLink}>Inicio</a>
             </Link>
           </li>
           <li>
-            <Link href="/page2" legacyBehavior>
-              <a className={styles.navLink}>Page 2</a>
+            <Link href="/Admin/workers" legacyBehavior>
+              <a className={styles.navLink}>Trabajadores</a>
             </Link>
           </li>
           <li>
             <Link href="/page3" legacyBehavior>
-              <a className={styles.navLink}>Page 3</a>
+              <a className={styles.navLink}>Tarea</a>
             </Link>
           </li>
         </ul>

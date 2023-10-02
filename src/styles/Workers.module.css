@@ -1,0 +1,121 @@
+/* Workers.module.css */
+
+/* Estilo para el contenedor principal */
+.conteiner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilo para el título de la página */
+  .tit {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para el contenedor de filtro y botón de agregar */
+  .filterContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para el input de filtro */
+  .input[type="text"] {
+    padding: 5px;
+    width: 70%;
+  }
+  
+  /* Estilo para el botón de agregar */
+  .button {
+    padding: 5px 10px;
+    background-color: #0070f3; /* Azul */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Estilo para la tabla */
+  .tab {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ccc;
+  }
+  
+  /* Estilo para el encabezado de la tabla */
+  .tabHeade th {
+    padding: 10px;
+    text-align: left;
+    background-color: #0070f3; /* Azul */
+    color: #fff;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  /* Estilo para las celdas de la tabla */
+  .tabBody td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Estilo para las filas pares */
+  .tabPart:nth-child(even) {
+    background-color: #f0f0f0;
+  }
+  
+  /* Estilo para los botones de acción */
+  /* Utiliza clases locales para los botones */
+  .button {
+    padding: 5px 10px;
+    background-color: #0070f3; /* Azul */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  /* Estilo para el botón de editar */
+  .edit {
+    background-color: #00c851; /* Verde */
+  }
+  
+  /* Estilo para el botón de eliminar */
+  .delete {
+    background-color: #ff3547; /* Rojo */
+  }
+  
+  /* Estilo para el formulario de ingreso de empleados */
+  .addEmployeeContainer {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .addEmployeeContainer h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .addEmployeeContainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .addEmployeeContainer input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+  }
+  
+  .addEmployeeContainer button {
+    padding: 5px 10px;
+    background-color: #00c851; /* Verde */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  

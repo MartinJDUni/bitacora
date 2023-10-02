@@ -1,0 +1,150 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model asignado {
+  Id     Int      @id @default(autoincrement())
+  Inicio DateTime @db.Date
+  Final  DateTime @db.Date
+  Meta   Int
+  tarea  tarea[]
+}
+
+model bitacora {
+  Id                Int             @id @default(autoincrement())
+  Semanal           DateTime        @db.Date
+  IdComentarioTarea Int
+  comentariotarea   comentariotarea @relation(fields: [IdComentarioTarea], references: [Id], onDelete: Cascade, map: "bitacora_ibfk_2")
+  progresotarea     progresotarea[]
+
+  @@index([IdComentarioTarea], map: "IdComentarioTarea")
+}
+
+model cliente {
+  Id           Int            @id @default(autoincrement())
+  Nombre       String         @db.VarChar(10)
+  Apellido     String         @db.VarChar(10)
+  Email        String         @db.VarChar(10)
+  Telefono     String         @db.VarChar(10)
+  clientetarea clientetarea[]
+}
+
+model clientetarea {
+  Id             Int           @id @default(autoincrement())
+  IdCliente      Int
+  IdProgrsoTarea Int
+  cliente        cliente       @relation(fields: [IdCliente], references: [Id], onDelete: Cascade, map: "clientetarea_ibfk_1")
+  progresotarea  progresotarea @relation(fields: [IdProgrsoTarea], references: [Id], onDelete: Cascade, map: "clientetarea_ibfk_2")
+
+  @@index([IdCliente], map: "IdCliente")
+  @@index([IdProgrsoTarea], map: "IdProgrsoTarea")
+}
+
+model comentario {
+  Id              Int               @id @default(autoincrement())
+  Comentario      String            @db.VarChar(50)
+  Fecha           DateTime          @db.DateTime(6)
+  comentariotarea comentariotarea[]
+}
+
+model comentariotarea {
+  Id           Int        @id @default(autoincrement())
+  IdComentario Int
+  IdEmpleado   Int
+  IdBitacora   Int
+  bitacora     bitacora[]
+  comentario   comentario @relation(fields: [IdComentario], references: [Id], onDelete: Cascade, map: "comentariotarea_ibfk_1")
+  empleado     empleado   @relation(fields: [IdEmpleado], references: [Id], onDelete: Cascade, map: "comentariotarea_ibfk_3")
+
+  @@index([IdBitacora], map: "IdBitacora")
+  @@index([IdComentario], map: "IdComentario")
+  @@index([IdEmpleado], map: "IdEmpleado")
+}
+
+model empleado {
+  Id              Int               @id @default(autoincrement())
+  Nombre          String            @db.VarChar(10)
+  Apellido        String            @db.VarChar(10)
+  Email           String            @db.VarChar(10)
+  Contrase_a      String            @map("Contraseña") @db.VarChar(10)
+  comentariotarea comentariotarea[]
+  empleadorol     empleadorol[]
+  empleadotarea   empleadotarea[]
+  registroacceso  registroacceso[]
+}
+
+model empleadorol {
+  Id         Int      @id @default(autoincrement())
+  IdRol      Int
+  IdEmpleado Int
+  empleado   empleado @relation(fields: [IdEmpleado], references: [Id], onDelete: Cascade, map: "empleadorol_ibfk_1")
+  rol        rol      @relation(fields: [IdRol], references: [Id], onDelete: Cascade, map: "empleadorol_ibfk_2")
+
+  @@index([IdEmpleado], map: "IdEmpleado")
+  @@index([IdRol], map: "IdRol")
+}
+
+model empleadotarea {
+  Id            Int             @id @default(autoincrement())
+  IdTarea       Int
+  IdEmpleado    Int
+  tarea         tarea           @relation(fields: [IdTarea], references: [Id], onDelete: Cascade, map: "empleadotarea_ibfk_1")
+  empleado      empleado        @relation(fields: [IdEmpleado], references: [Id], onDelete: Cascade, map: "empleadotarea_ibfk_2")
+  progresotarea progresotarea[]
+
+  @@index([IdEmpleado], map: "IdEmpleado")
+  @@index([IdTarea], map: "IdTarea")
+}
+
+model estadotarea {
+  Id            Int             @id @default(autoincrement())
+  Nombre        String          @db.VarChar(10)
+  Descripcion   String          @db.VarChar(50)
+  progresotarea progresotarea[]
+}
+
+model progresotarea {
+  Id              Int            @id @default(autoincrement())
+  IdEstado        Int
+  IdEmpleadoTarea Int
+  IdBitacora      Int
+  clientetarea    clientetarea[]
+  empleadotarea   empleadotarea  @relation(fields: [IdEmpleadoTarea], references: [Id], onDelete: Cascade, map: "progresotarea_ibfk_1")
+  estadotarea     estadotarea    @relation(fields: [IdEstado], references: [Id], onDelete: Cascade, map: "progresotarea_ibfk_2")
+  bitacora        bitacora       @relation(fields: [IdBitacora], references: [Id], onDelete: Cascade, map: "progresotarea_ibfk_3")
+
+  @@index([IdBitacora], map: "IdBitacora")
+  @@index([IdEmpleadoTarea], map: "IdEmpleadoTarea")
+  @@index([IdEstado], map: "IdSeguimiento")
+}
+
+model registroacceso {
+  Id         Int      @id @default(autoincrement())
+  IdEmpleado Int
+  Fecha      DateTime @db.DateTime(6)
+  empleado   empleado @relation(fields: [IdEmpleado], references: [Id], onDelete: Cascade, map: "registroacceso_ibfk_1")
+
+  @@index([IdEmpleado], map: "IdEmpleado")
+}
+
+model rol {
+  Id          Int           @id @default(autoincrement())
+  Nombre      String        @db.VarChar(10)
+  empleadorol empleadorol[]
+}
+
+model tarea {
+  Id            Int             @id @default(autoincrement())
+  Nombre        String          @db.VarChar(10)
+  Descripcion   String          @db.VarChar(50)
+  IdAsignado    Int
+  empleadotarea empleadotarea[]
+  asignado      asignado        @relation(fields: [IdAsignado], references: [Id], onDelete: Cascade, map: "tarea_ibfk_1")
+
+  @@index([IdAsignado], map: "IdAsignado")
+}
