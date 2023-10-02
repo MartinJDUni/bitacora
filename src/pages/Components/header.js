@@ -28,7 +28,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/page3" legacyBehavior>
+            <Link href="/Admin/task" legacyBehavior>
               <a className={styles.navLink}>Tarea</a>
             </Link>
           </li>

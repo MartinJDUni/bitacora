@@ -1,0 +1,135 @@
+/* Workers.module.css */
+
+/* Estilo para el contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ff0000;
+}
+
+/* Estilo para el título de la página */
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el contenedor de filtro y botón de agregar */
+.filterContainer {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que los elementos se ajusten en filas si no caben en el ancho */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el input de filtro */
+.input[type="text"] {
+    padding: 5px;
+    width: 100%;
+    /* Ocupa todo el ancho disponible en pantallas pequeñas */
+    margin-bottom: 10px;
+    /* Espacio entre el input y el botón en pantallas pequeñas */
+}
+
+/* Estilo para el botón de agregar */
+.addButton {
+    padding: 5px 10px;
+    background-color: #0070f3;
+    /* Azul */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.tableContainer {
+    overflow-x: auto;
+    /* Agrega desplazamiento horizontal en pantallas pequeñas */
+}
+
+/* Estilo para la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+/* Estilo para el encabezado de la tabla */
+.tableHeader th {
+    padding: 10px;
+    text-align: left;
+    background-color: #0070f3;
+    /* Azul */
+    color: #fff;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Estilo para las celdas de la tabla */
+.tableBody td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Estilo para las filas pares */
+.tableRow:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+/* Estilo para los botones de acción */
+/* Utiliza clases locales para los botones */
+.editButton {
+    padding: 5px 10px;
+    background-color: #00c851;
+    /* Verde */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+/* Estilo para el botón de eliminar */
+.deleteButton {
+    padding: 5px 10px;
+    background-color: #ff3547;
+    /* Rojo */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Media query para pantallas pequeñas (menos de 600px) */
+@media screen and (max-width: 600px) {
+
+    /* Ajusta el tamaño de fuente y margen en pantallas pequeñas */
+    .title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Cambia el ancho del input de filtro en pantallas pequeñas */
+    .input[type="text"] {
+        width: 100%;
+    }
+
+    /* Ajusta el espaciado entre elementos en pantallas pequeñas */
+    .filterContainer {
+        flex-direction: column;
+        /* Coloca los elementos en columna en pantallas pequeñas */
+        align-items: flex-start;
+        /* Alinea los elementos a la izquierda en pantallas pequeñas */
+    }
+
+    /* Agrega un margen superior al botón de agregar en pantallas pequeñas */
+    .addButton {
+        margin-top: 10px;
+    }
+
+    /* Agrega un desplazamiento horizontal en la tabla en pantallas pequeñas */
+    .table {
+        overflow-x: auto;
+    }
+}
