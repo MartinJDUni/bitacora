@@ -1,8 +1,11 @@
-import styles from '@/styles/Home.module.css'
-import Layout from "@/pages/Layout/layout"
 
+import Layout from'@/pages/Layout/layout'
+import AddWorker from '@/pages/Components/addWorker'
+import AddTask from './Components/addTask'
 export default function Home() {
   return (
-    <div><h1>En desarrollo</h1></div>
+    <div>
+      <AddWorker></AddWorker>
+    </div>
   )
 }
