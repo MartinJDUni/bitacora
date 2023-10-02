@@ -18,7 +18,7 @@ export default function Header() {
       <nav className={styles.nav}>
         <ul className={styles.navList}>
           <li>
-            <Link href="/" legacyBehavior>
+            <Link href="/Team/gra" legacyBehavior>
               <a className={styles.navLink}>Inicio</a>
             </Link>
           </li>
