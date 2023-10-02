@@ -1,11 +1,10 @@
 
 import Layout from'@/pages/Layout/layout'
-import AddWorker from '@/pages/Components/addWorker'
-import AddTask from './Components/addTask'
+import Header from './Components/header'
 export default function Home() {
   return (
     <div>
-      <AddWorker></AddWorker>
+      <Header></Header>
     </div>
   )
 }
