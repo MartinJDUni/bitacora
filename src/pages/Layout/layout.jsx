@@ -1,5 +1,6 @@
 import style from "@/styles/Layout.module.css"
 import Header from "../Components/header"
+import AddWorkerForm from "../Components/addWorker"
 
 export default function Layout({ children }) {
     return (
@@ -8,7 +9,6 @@ export default function Layout({ children }) {
             <main>
                 {children}
             </main>
-
         </div>
     )
 }
