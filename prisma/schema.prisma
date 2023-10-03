@@ -71,7 +71,7 @@ model empleado {
   Nombre          String            @db.VarChar(10)
   Apellido        String            @db.VarChar(10)
   Email           String            @db.VarChar(10)
-  Contrasena      String            @map("Contraseña") @db.VarChar(10)
+  Contraseña      String            @map("Contraseña") @db.VarChar(10)
   comentariotarea comentariotarea[]
   empleadorol     empleadorol[]
   empleadotarea   empleadotarea[]

@@ -55,7 +55,7 @@ export default function TareasPage({ tareas }) {
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>IDAsignado</th>
-                <th></th>
+                <th>Acciones</th>
               </tr>
             </thead>
             <tbody className={style.tableBody}>
