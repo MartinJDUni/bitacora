@@ -37,7 +37,7 @@ const AddWorkerModal = ({ isOpen, onClose }) => {
     onClose();
   };
 
-  return (
+  return ( 
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
