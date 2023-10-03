@@ -58,7 +58,7 @@ export default function EmployeesPage({ employees }) {
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Email</th>
-                <th>Contraseña</th>
+                <th>Acciones</th>
               </tr>
             </thead>
             <tbody className={style.tableBody}>
@@ -72,7 +72,6 @@ export default function EmployeesPage({ employees }) {
                     <td>{employee.Nombre}</td>
                     <td>{employee.Apellido}</td>
                     <td>{employee.Email}</td>
-                    <td>{employee.Password}</td>
                     <td>
                       <button className={style.editButton}>Editar</button>
                       <button className={style.deleteButton}>Eliminar</button>
