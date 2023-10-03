@@ -48,7 +48,35 @@ export default function TareasPage({ tareas }) {
           </button>
         </div>
         <div className={style.tableContainer}>
-          {/* ... Código de la tabla de tareas ... */}
+          <table className={style.table}>
+            <thead className={style.tableHeader}>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>IDAsignado</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody className={style.tableBody}>
+              {tareas
+                .filter((tarea) =>
+                  tarea.Nombre.toLowerCase().includes(filterText.toLowerCase())
+                )
+                .map((tarea) => (
+                  <tr key={tarea.Id} className={style.tableRow}>
+                    <td>{tarea.Id}</td>
+                    <td>{tarea.Nombre}</td>
+                    <td>{tarea.Descripcion}</td>
+                    <td>{tarea.IdAsignado}</td>
+                    <td>
+                      <button className={style.editButton}>Editar</button>
+                      <button className={style.deleteButton}>Eliminar</button>
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
         </div>
       </div>
 
